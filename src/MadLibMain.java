@@ -1,3 +1,5 @@
+import sun.java2d.loops.DrawLine;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -34,7 +36,7 @@ public class MadLibMain implements ActionListener {
 
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         if (lib.equals("Solar System")) {
-            mainFrame.setSize(695, 600);
+            mainFrame.setSize(1500, 600);
         } else if (lib.equals("Pirates Cove")) {
             mainFrame.setSize(700, 600);
         }
@@ -59,9 +61,9 @@ public class MadLibMain implements ActionListener {
             button2[b].addActionListener(this);
 
             textOutput2[b] = new JTextField(20);
-            mainPanel.add(new JLabel("      "));
+            mainPanel.add(new JLabel("                                                         "));
             textOutput2[b].setEditable(false);
-            mainPanel.add(textOutput2[b]);
+            //mainPanel.add(textOutput2[b]);
         }
 
 
@@ -101,20 +103,20 @@ public class MadLibMain implements ActionListener {
 //                        "\n");
 //                textFieldA.setColumns(10);
             } else if (lib.equals("Solar System")) {
-                String SS = "When we look up into the sky on a/an " + textOutput2[0] + " summer" +
-                        "\nnight, we see millions of tiny spots of light.  Each one represents a/an " +
-                        "\n" + textOutput2[1] + " which is the center of a/an " + textOutput2[2] + "" +
-                        "\n solar system with dozens of " + textOutput2[3] + " revolving" +
-                        "\n" + textOutput2[4] + " around a distant sun.  Sometimes these suns expand and" +
-                        "\n begin " + textOutput2[5] + " their neighbors.  Soon they will become so" +
-                        "\nbig, they will turn into " + textOutput2[6] + ".  Eventually they subside" +
-                        "\nand become " + textOutput2[7] + " giants or perhaps black " + textOutput2[8] + "." +
-                        "\nOur own planet, which we call " + textOutput2[9] + ", circles around" +
-                        "\nour " + textOutput2[10] + " sun " + textOutput2[11] + " times every year. There are eight other" +
-                        "\nplanets in our solar system.  They are named " + textOutput2[12] + ", " + textOutput2[13] + "," +
-                        "\n" + textOutput2[14] + "," + textOutput2[15] + "," + textOutput2[16] + "," +
-                        "\n" + textOutput2[17] + ", Jupiter, and Mars.  Scientists who study these" +
-                        "\nplanets are called " + textOutput2[18] + ".";
+                String SS = "When we look up into the sky on a/an " + textOutput2[0].getText() + " summer" +
+                        "\nnight, we see millions of tiny spots of light.  Each one represents" +
+                        "\na/an " + textOutput2[1].getText() + " which is the center of a/an " + textOutput2[2].getText() + "" +
+                        "\nsolar system with dozens of " + textOutput2[3].getText() + " revolving" +
+                        "\n" + textOutput2[4].getText() + " around a distant sun.  Sometimes these suns expand and" +
+                        "\nbegin " + textOutput2[5].getText() + " their neighbors.  Soon they will become so" +
+                        "\nbig, they will turn into " + textOutput2[6].getText() + ".  Eventually they subside" +
+                        "\nand become " + textOutput2[7].getText() + " giants or perhaps black " + textOutput2[8].getText() + "." +
+                        "\nOur own planet, which we call " + textOutput2[9].getText() + ", circles around" +
+                        "\nour " + textOutput2[10].getText() + " sun " + textOutput2[11].getText() + " times every year. There are eight other" +
+                        "\nplanets in our solar system.  They are named " + textOutput2[12].getText() + ", " + textOutput2[13].getText() + "," +
+                        "\n" + textOutput2[14].getText() + "," + textOutput2[15].getText() + "," + textOutput2[16].getText() + "," + textOutput2[17].getText() + ", Jupiter, and Mars.  Scientists who study these" +
+                        "\nplanets are called " + textOutput2[18].getText() + ".";
+                System.out.println(SS);
                 mainPanel.add(new JTextArea(SS));
             }
         }
