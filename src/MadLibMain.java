@@ -101,7 +101,7 @@ public class MadLibMain implements ActionListener {
 //                        "\n");
 //                textFieldA.setColumns(10);
             } else if (lib.equals("Solar System")) {
-                mainPanel.add(new JTextArea("When we look up into the sky on a/an " + textOutput2[0] + " summer" +
+                String SS = "When we look up into the sky on a/an " + textOutput2[0] + " summer" +
                         "\nnight, we see millions of tiny spots of light.  Each one represents a/an " +
                         "\n" + textOutput2[1] + " which is the center of a/an " + textOutput2[2] + "" +
                         "\n solar system with dozens of " + textOutput2[3] + " revolving" +
@@ -114,7 +114,8 @@ public class MadLibMain implements ActionListener {
                         "\nplanets in our solar system.  They are named " + textOutput2[12] + ", " + textOutput2[13] + "," +
                         "\n" + textOutput2[14] + "," + textOutput2[15] + "," + textOutput2[16] + "," +
                         "\n" + textOutput2[17] + ", Jupiter, and Mars.  Scientists who study these" +
-                        "\nplanets are called " + textOutput2[18] + "."));
+                        "\nplanets are called " + textOutput2[18] + ".";
+                mainPanel.add(new JTextArea(SS));
             }
         }
     }
