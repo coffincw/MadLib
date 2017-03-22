@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 /**
  * Created by caleb on 3/20/17.
@@ -24,9 +23,6 @@ public class MadLibMain implements ActionListener {
     JTextField[] textInput2;
     JTextField[] textOutput2;
     JButton[] button2;
-    ArrayList<JButton> button = new ArrayList<>();
-    ArrayList<JTextField> textInput = new ArrayList<>();
-    ArrayList<JTextField> textOutput = new ArrayList<>();
 
     public MadLibMain() {
         lib = "Solar System";
@@ -53,24 +49,18 @@ public class MadLibMain implements ActionListener {
         for (int b = 0; b < POS; b++) {
             count++;
             poS(solarSystemPOS);
-            // textInput.add(new JTextField(20));
             textInput2[b] = new JTextField(20);
             Font font1 = new Font("ComicSans", Font.BOLD, 12);
-            //textInput.get(b).setFont(font1);
             textInput2[b].setFont(font1);
-            //mainPanel.add(textInput.get(b)
             mainPanel.add(textInput2[b]);
 
             button2[b] = new JButton("Lock In!");
             mainPanel.add(button2[b]);
             button2[b].addActionListener(this);
 
-            //textOutput.add(new JTextField(20));
             textOutput2[b] = new JTextField(20);
             mainPanel.add(new JLabel("      "));
-            //textOutput.get(b).setEditable(false);
             textOutput2[b].setEditable(false);
-            //mainPanel.add(textOutput.get(b));
             mainPanel.add(textOutput2[b]);
         }
 
@@ -96,7 +86,7 @@ public class MadLibMain implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        for (int b = 0; b <= POS; b++) {
+        for (int b = 0; b <= POS-1; b++) {
             if (e.getSource() == button2[b]) {
 //                System.out.println(textInput2[b].getText());
                 textOutput2[b].setText(textInput2[b].getText());
@@ -111,23 +101,21 @@ public class MadLibMain implements ActionListener {
 //                        "\n");
 //                textFieldA.setColumns(10);
             } else if (lib.equals("Solar System")) {
-                textFieldA = new JTextArea("When we look up into the sky on a/an " + textInput2[0] + " summer" +
+                mainPanel.add(new JTextArea("When we look up into the sky on a/an " + textOutput2[0] + " summer" +
                         "\nnight, we see millions of tiny spots of light.  Each one represents a/an " +
-                        "\n" + textInput2[1] + " which is the center of a/an " + textInput2[2] + "" +
-                        "\n solar system with dozens of " + textInput2[3] + " revolving" +
-                        "\n" + textInput2[4] + " around a distant sun.  Sometimes these suns expand and" +
-                        "\n begin " + textInput2[5] + " their neighbors.  Soon they will become so" +
-                        "\nbig, they will turn into " + textInput2[6] + ".  Eventually they subside" +
-                        "\nand become " + textInput2[7] + " giants or perhaps black " + textInput2[8] + "." +
-                        "\nOur own planet, which we call " + textInput2[9] + ", circles around" +
-                        "\nour " + textInput2[10] + " sun " + textInput2[11] + " times every year. There are eight other" +
-                        "\nplanets in our solar system.  They are named " + textInput2[12] + ", " + textInput2[13] + "," +
-                        "\n" + textInput2[14] + "," + textInput2[15] + "," + textInput2[16] + "," +
-                        "\n" + textInput2[17] + ", Jupiter, and Mars.  Scientists who study these" +
-                        "\nplanets are called " + textInput2[18] + ".");
+                        "\n" + textOutput2[1] + " which is the center of a/an " + textOutput2[2] + "" +
+                        "\n solar system with dozens of " + textOutput2[3] + " revolving" +
+                        "\n" + textOutput2[4] + " around a distant sun.  Sometimes these suns expand and" +
+                        "\n begin " + textOutput2[5] + " their neighbors.  Soon they will become so" +
+                        "\nbig, they will turn into " + textOutput2[6] + ".  Eventually they subside" +
+                        "\nand become " + textOutput2[7] + " giants or perhaps black " + textOutput2[8] + "." +
+                        "\nOur own planet, which we call " + textOutput2[9] + ", circles around" +
+                        "\nour " + textOutput2[10] + " sun " + textOutput2[11] + " times every year. There are eight other" +
+                        "\nplanets in our solar system.  They are named " + textOutput2[12] + ", " + textOutput2[13] + "," +
+                        "\n" + textOutput2[14] + "," + textOutput2[15] + "," + textOutput2[16] + "," +
+                        "\n" + textOutput2[17] + ", Jupiter, and Mars.  Scientists who study these" +
+                        "\nplanets are called " + textOutput2[18] + "."));
             }
-            textFieldA.setEditable(false);
-            mainPanel.add(textFieldA);
         }
     }
 }
