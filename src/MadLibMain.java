@@ -61,13 +61,28 @@ public class MadLibMain implements ActionListener {
             button2[b].addActionListener(this);
 
             textOutput2[b] = new JTextField(20);
-            mainPanel.add(new JLabel("                                                         "));
+            if (b == 0) {
+                for (int space = 0; space <= 25; space++) {
+                    mainPanel.add(new JLabel(" "));
+                }
+            } else if (b == 7) {
+                mainPanel.add(new JLabel("                                             "));
+            } else if (b >= 11  && b <= 17) {
+                mainPanel.add(new JLabel("                                                             "));
+            }
+            else {
+                mainPanel.add(new JLabel("                                                  "));
+            }
+
             textOutput2[b].setEditable(false);
             //mainPanel.add(textOutput2[b]);
         }
 
 
         buttonC = new JButton("Generate Mad Lib");
+        for (int space = 0 ; space <= 199 ; space++) {
+            mainPanel.add(new JLabel(" "));
+        }
         mainPanel.add(buttonC);
         buttonC.addActionListener(this);
 
