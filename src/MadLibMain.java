@@ -12,8 +12,10 @@ import java.awt.event.ActionListener;
 public class MadLibMain implements ActionListener {
     static JFrame mainFrame;
     static MLibPanel mainPanel;
+    static MLibPanel resultPanel;
     static JButton buttonC;
     static JTextArea textFieldA;
+    static String SS;
     int count;
     String lib;
     int POS;
@@ -36,7 +38,7 @@ public class MadLibMain implements ActionListener {
 
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         if (lib.equals("Solar System")) {
-            mainFrame.setSize(1500, 600);
+            mainFrame.setSize(1500, 1000);
         } else if (lib.equals("Pirates Cove")) {
             mainFrame.setSize(700, 600);
         }
@@ -45,7 +47,7 @@ public class MadLibMain implements ActionListener {
         mainPanel = new MLibPanel();
         mainFrame.setContentPane(mainPanel);
 
-        mainPanel.setBackground(Color.orange);
+        mainPanel.setBackground(Color.CYAN);
         count = 0;
 
         for (int b = 0; b < POS; b++) {
@@ -102,6 +104,12 @@ public class MadLibMain implements ActionListener {
         }
     }
 
+    public void result () {
+        resultPanel = new MLibPanel();
+        mainFrame.setContentPane(resultPanel);
+        resultPanel.add(new JTextArea(SS));
+    }
+
     public void actionPerformed(ActionEvent e) {
         for (int b = 0; b <= POS-1; b++) {
             if (e.getSource() == button2[b]) {
@@ -118,7 +126,7 @@ public class MadLibMain implements ActionListener {
 //                        "\n");
 //                textFieldA.setColumns(10);
             } else if (lib.equals("Solar System")) {
-                String SS = "When we look up into the sky on a/an " + textOutput2[0].getText() + " summer" +
+                SS = "When we look up into the sky on a/an " + textOutput2[0].getText() + " summer" +
                         "\nnight, we see millions of tiny spots of light.  Each one represents" +
                         "\na/an " + textOutput2[1].getText() + " which is the center of a/an " + textOutput2[2].getText() + "" +
                         "\nsolar system with dozens of " + textOutput2[3].getText() + " revolving" +
@@ -131,8 +139,6 @@ public class MadLibMain implements ActionListener {
                         "\nplanets in our solar system.  They are named " + textOutput2[12].getText() + ", " + textOutput2[13].getText() + "," +
                         "\n" + textOutput2[14].getText() + "," + textOutput2[15].getText() + "," + textOutput2[16].getText() + "," + textOutput2[17].getText() + ", Jupiter, and Mars.  Scientists who study these" +
                         "\nplanets are called " + textOutput2[18].getText() + ".";
-                System.out.println(SS);
-                mainPanel.add(new JTextArea(SS));
             }
         }
     }
